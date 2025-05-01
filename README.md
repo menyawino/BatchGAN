@@ -67,17 +67,3 @@ The main workflow consists of:
    ```bash
    python -m testing.benchmarks.evaluate --corrected_dir data/processed --metrics structural,biological
    ```
-
-## Citation
-If you use this code in your research, please cite:
-```
-@article{histology_batch_correction,
-  title={Advanced Deep Learning Methods for Batch Correction in Valve Histology Images},
-  author={[Author Names]},
-  journal={[Journal]},
-  year={2025}
-}
-```
-
-## License
-[License Type]
