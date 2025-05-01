@@ -1,0 +1,48 @@
+model:
+  name: "cycle_gan_attention"
+  generators:
+    channels: 64
+    n_residual_blocks: 9
+    attention_layers: [3, 5, 7]  # Add self-attention at these residual blocks
+    dropout_rate: 0.0
+    use_spectral_norm: true
+  discriminators:
+    channels: 64
+    n_layers: 3
+    use_spectral_norm: true
+
+training:
+  batch_size: 4
+  lr: 0.0002
+  beta1: 0.5
+  beta2: 0.999
+  epochs: 200
+  lambda_cycle: 10.0
+  lambda_identity: 2.0
+  lambda_perceptual: 1.0  # Perceptual loss weight
+  scheduler:
+    type: "linear"
+    start_epoch: 100
+    end_epoch: 200
+  
+data:
+  img_size: 256
+  healthy_dir: "data/raw/healthy"
+  diseased_dir: "data/raw/diseased"
+  val_split: 0.15
+  augmentation:
+    rotate: 10
+    scale: [0.9, 1.1]
+    flip_prob: 0.5
+    brightness_contrast: 0.1
+    blur_prob: 0.1
+
+logging:
+  save_freq: 10
+  sample_freq: 5
+  log_dir: "results/logs"
+  use_wandb: true
+  project_name: "valve_histology_correction"
+
+evaluation:
+  metrics: ["ssim", "psnr", "fid", "tissue_features"]
