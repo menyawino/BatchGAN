@@ -1,7 +1,7 @@
 # Histology Batch Correction for Valve Tissue Analysis
 
 ## Overview
-This project implements advanced deep learning methods for batch correction in valve histology images. It specifically addresses the challenge of comparing diseased valve tissue with healthy valve tissue by correcting batch effects that arise from differences in sample collection, processing, and imaging protocols.
+This project implements a deep learning method for batch correction in valve histology images. It specifically addresses the challenge of comparing diseased valve tissue with healthy valve tissue by correcting batch effects that arise from differences in sample collection, processing, and imaging protocols.
 
 ## Problem Statement
 Healthy heart valve tissue is difficult to collect, leading to challenges in comparative studies between healthy and diseased valve tissue. Batch effects caused by different collection times, preservation methods, staining protocols, and imaging conditions can introduce technical variability that confounds biological differences. This project provides a computational solution to adjust for these batch effects, enabling more accurate comparisons.
